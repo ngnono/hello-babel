@@ -1,0 +1,17 @@
+node_modules
+coverage
+dist
+
+.idea
+
+log[s]
+
+exercise
+
+*.log
+
+lib
+
+**/server/config/test.yml
+**/server/config/staging.yml
+**/server/config/production.yml
