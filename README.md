@@ -11,7 +11,7 @@ $ npm install --save hello-babel
 
 ### development
 
-在执行前 请先全局安装(nodemon)[https://github.com/remy/nodemon]
+在执行前 请先全局安装[nodemon](https://github.com/remy/nodemon)
 ```sh
 
 $ npm install -g nodemon
@@ -55,7 +55,7 @@ $ DEBUG=server:* PORT=9001 NODE_ENV=staging node ./lib/index.js --harmony
 
 ## License
 
-MIT © [ngnono]()
+MIT © [ngnono](./LICENSE)
 
 
 [npm-image]: https://badge.fury.io/js/hello-babel.svg
