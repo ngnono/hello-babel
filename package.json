@@ -34,7 +34,8 @@
     "gulp-mocha": "^2.0.0",
     "gulp-nsp": "^2.1.0",
     "gulp-plumber": "^1.0.0",
-    "isparta": "^4.0.0"
+    "isparta": "^4.0.0",
+    "nodemon": "^1.11.0"
   },
   "eslintConfig": {
     "extends": "xo-space",
@@ -46,8 +47,8 @@
   "scripts": {
     "prepublish": "gulp prepublish",
     "test": "gulp",
-    "run": "node ./lib/index.js --harmony",
-    "start": "node ./lib/index.js --harmony"
+    "start": "gulp prepublish & node ./lib/index.js --harmony",
+    "debug":"nodemon ./src/debug.js"
   },
   "license": "MIT",
   "dependencies": {

@@ -14,8 +14,8 @@ import routes from './routes';
 
 
 // 监听端口，默认9000
-const PORT = process.env.PORT || 9000;
-const NODE_ENV = process.env.NODE_ENV || 'development';
+const PORT = process.env.PORT;
+const NODE_ENV = process.env.NODE_ENV;
 
 const app = koa();
 

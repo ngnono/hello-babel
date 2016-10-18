@@ -9,11 +9,50 @@ $ npm install --save hello-babel
 
 ## Usage
 
-```js
-var helloBabel = require('hello-babel');
+### development
 
-helloBabel('Rainbow');
+在执行前 请先全局安装(nodemon)[https://github.com/remy/nodemon]
+```sh
+
+$ npm install -g nodemon
+
 ```
+
+然后
+
+```sh
+
+$ npm run debug
+
+
+```
+
+### test && staging
+
+#### win
+
+```sh
+$ gulp prepublish
+$ set DEBUG=server:* & set PORT=9001 & set NODE_ENV=staging  & node ./lib/index.js --harmony
+
+````
+
+如果要删除环境变量
+
+```sh
+$ set DEBUG= & set PORT= & set NODE_ENV=
+
+```
+
+
+#### linux
+
+```sh
+$ gulp prepublish
+$ DEBUG=server:* PORT=9001 NODE_ENV=staging node ./lib/index.js --harmony
+
+````
+
 ## License
 
 MIT © [ngnono]()
