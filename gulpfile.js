@@ -27,7 +27,7 @@ gulp.task('nsp', function (cb) {
 });
 
 gulp.task('pre-test', function () {
-  return gulp.src('lib/**/*.js')
+  return gulp.src('src/**/*.js')
     .pipe(excludeGitignore())
     .pipe(istanbul({
       includeUntested: true,
@@ -47,7 +47,7 @@ gulp.task('test', ['pre-test'], function (cb) {
     })
     .pipe(istanbul.writeReports())
     .on('end', function () {
-      cb(mochaErr);
+      return cb && cb(mochaErr);
     });
 });
 
@@ -71,6 +71,11 @@ gulp.task('copyConfig', ['clean'], function () {
     .pipe(excludeGitignore())
     .pipe(gulp.dest('lib'));
 });
+
+//https://github.com/sindresorhus/gulp-mocha/issues/1
+gulp.doneCallback = function (err) {
+  process.exit(err ? 1 : 0);
+};
 
 gulp.task('prepublish', ['nsp', 'babel']);
 gulp.task('default', ['static', 'test']);
