@@ -21,5 +21,3 @@ var Bootstrap = module.exports = function () {
 
 Bootstrap.prototype.init = function () {
 };
-
-

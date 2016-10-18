@@ -1,10 +1,13 @@
 # hello-babel [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
 > 
 
+
+建议使用 [NPM淘宝镜像](http://npm.taobao.org/) 就一个字 快
+
 ## Installation
 
 ```sh
-$ npm install --save hello-babel
+$
 ```
 
 ## Usage

@@ -8,16 +8,11 @@ import error from 'koa-onerror';
 import responseTime from 'koa-response-time';
 import trace from 'koa-trace';
 
-import address from 'network-address';
-
 import routes from './routes';
 
-
-// 监听端口，默认9000
-const PORT = process.env.PORT;
 const NODE_ENV = process.env.NODE_ENV;
 
-const app = koa();
+var app = koa();
 
 // 异常处理
 // 通过accept头可以返回不同的结果
@@ -36,10 +31,13 @@ app.use(responseTime());
 
 app.use(routes());
 
-app.listen(PORT, err => {
-  if (err) {
-    throw err;
-  }
+/**
+ *
+ * @param opts
+ * @returns {*}
+ */
+export default (opts)=> {
+  opts = opts || {};
 
-  console.info('app is listening on "%s:%s" env="%s"', address(), PORT, NODE_ENV);
-});
+  return app;
+};

@@ -9,7 +9,8 @@ import parse from 'co-body';
  */
 export function* index() {
   this.body = {
-    status: 200
+    status: true,
+    code: 200
   };
 }
 
@@ -21,6 +22,8 @@ export function* webhook() {
   console.log(this.headers);
 
   this.body = {
-    status: 200
+    status: true,
+    code: 200,
+    data: text
   };
 }
