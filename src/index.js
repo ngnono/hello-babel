@@ -1,7 +1,7 @@
 import 'babel-polyfill';
 
 import bootstarp from './server/bootstrap';
-import server from './server/index';
+import server from './server/server';
 import address from 'network-address';
 
 var opts = {};

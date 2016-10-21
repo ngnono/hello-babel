@@ -56,6 +56,14 @@ $ DEBUG=server:* PORT=9001 NODE_ENV=staging node ./lib/index.js --harmony
 
 ````
 
+## 参考文献
+
+### 非常好的入门教程
+[实例讲解基于 React+Redux 的前端开发流程](https://segmentfault.com/a/1190000005356568)
+
+### 阮一峰的网络日志
+[React 技术栈系列教程](http://www.ruanyifeng.com/blog/2016/09/react-technology-stack.html)
+
 ## License
 
 MIT © [ngnono](./LICENSE)
