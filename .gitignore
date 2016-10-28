@@ -9,7 +9,7 @@ log[s]
 exercise
 
 *.log
-
+*.log.*
 lib
 
 **/server/config/test.yml
