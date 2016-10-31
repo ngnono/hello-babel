@@ -5,14 +5,14 @@
 
 
 
-function reducer(state = {value: 0, clickCount: 0}, action) {
+function reducer(state = {value: 0, payload: {}}, action) {
   const value = state.value;
-  const count = state.clickCount;
+  const count = state.payload.clickCount;
   let clickCount = (count + 1);
   switch (action.type) {
-    case 'onClient':
+    case 'helloWorld':
 
-      return {value: value, clickCount: clickCount};
+      return {value: value, payload: {clickCount: clickCount}};
     default:
       return state
   }

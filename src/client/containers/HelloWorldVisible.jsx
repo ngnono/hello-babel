@@ -5,7 +5,7 @@
 import connect from 'react-redux';
 
 import HelloWorld from '../components/HelloWorld.jsx';
-import action from '../actions/HelloWorldAction.jsx';
+import actionCreateer from '../actions/HelloWorldAction.jsx';
 
 function mapStateToProps(state) {
   return {
@@ -15,7 +15,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    onClick: () => dispatch(action)
+    onClick: () => dispatch({ type: 'helloWorld' })
   }
 }
 

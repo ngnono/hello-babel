@@ -8,7 +8,7 @@ class AppleBasket extends React.Component {
   render() {
     let { state } = this.props;
 
-    //这部分从对应的 appleBasketReducer.js 中拷贝
+    //这部分从对应的 appleBasketReducer.jsx 中拷贝
     let mockState = {
       isPicking : false,
       newAppleId: 3,

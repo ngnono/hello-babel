@@ -9,6 +9,7 @@ var plumber = require('gulp-plumber');
 var babel = require('gulp-babel');
 var del = require('del');
 var isparta = require('isparta');
+var webpack = require('gulp-webpack');
 
 // Initialize the babel transpiler so ES2015 files gets compiled
 // when they're loaded
@@ -65,12 +66,22 @@ gulp.task('clean', function () {
   return del('lib/');
 });
 
-
 gulp.task('copyConfig', ['clean'], function () {
   return gulp.src('src/**/*.yml')
     .pipe(excludeGitignore())
     .pipe(gulp.dest('lib'));
 });
+
+gulp.task('webpackClean', function () {
+  return del('dist/');
+});
+
+gulp.task('webpack',[ 'webpackClean'],function() {
+  return gulp.src('src/client/index.jsx')
+    .pipe(webpack(require('./webpack.config.js')))
+    .pipe(gulp.dest('dist/'));
+});
+
 
 //https://github.com/sindresorhus/gulp-mocha/issues/1
 gulp.doneCallback = function (err) {
