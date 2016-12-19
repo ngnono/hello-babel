@@ -28,6 +28,11 @@ module.exports = {
     }),
     new OpenBrowserPlugin({
       url: 'http://localhost:8088'
+    }),
+    new webpack.DefinePlugin({
+      "process.env": {
+        NODE_ENV: JSON.stringify("production")
+      }
     })
   ]
 };

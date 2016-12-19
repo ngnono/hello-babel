@@ -1,5 +1,7 @@
 /**
  * Created by lianghongpeng on 2016/10/17.
+ * http://reactjs.cn/react/docs/getting-started-zh-CN.html
+ * http://www.ruanyifeng.com/blog/2016/09/react-technology-stack.html
  */
 
 
