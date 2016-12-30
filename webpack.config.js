@@ -4,9 +4,10 @@
 var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var OpenBrowserPlugin = require('open-browser-webpack-plugin');
+var webpack = require('webpack');
 
 module.exports = {
-  entry: './src/client/index.jsx',
+  entry: './src/client/index.js',
   output: {
     filename: 'js/main.js'
   },
@@ -20,6 +21,7 @@ module.exports = {
           presets: ['es2015', 'react']
         }
       },
+      // { test: /\.css$/, loader: 'style-loader!css-loader' },
     ]
   },
   plugins: [
@@ -27,11 +29,11 @@ module.exports = {
       template: path.join(__dirname, 'src', 'client','assets', 'index.html')
     }),
     new OpenBrowserPlugin({
-      url: 'http://localhost:8088'
+      url: 'http://localhost:3001'
     }),
     new webpack.DefinePlugin({
       "process.env": {
-        NODE_ENV: JSON.stringify("production")
+        NODE_ENV: JSON.stringify("development")//production
       }
     })
   ]

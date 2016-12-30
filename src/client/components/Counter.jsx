@@ -1,15 +1,20 @@
 /**
  * Created by lianghongpeng on 2016/10/31.
  */
-import React, { Component, PropTypes } from 'react'
+import React, {Component, PropTypes} from 'react'
 
 class Counter extends Component {
+
   render() {
-    const { value, onIncreaseClick } = this.props;
+    const {title, value, onIncreaseClick, onDecreaseClick} = this.props;
+
+    const count = value;
     return (
       <div>
-        <span>{value}</span>
-        <button onClick={onIncreaseClick}>Increase</button>
+        <h1>{title}</h1>
+        <h2>{count}</h2>
+        <button onClick={onIncreaseClick}>+</button>
+        <button onClick={onDecreaseClick}>-</button>
       </div>
     );
   }
@@ -17,7 +22,8 @@ class Counter extends Component {
 
 Counter.propTypes = {
   value: PropTypes.number.isRequired,
-  onIncreaseClick: PropTypes.func.isRequired
+  onIncreaseClick: PropTypes.func.isRequired,
+  onDecreaseClick: PropTypes.func.isRequired
 };
 
 export default Counter;

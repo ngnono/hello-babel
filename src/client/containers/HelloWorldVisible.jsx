@@ -4,7 +4,7 @@
 
 import connect from 'react-redux';
 
-import HelloWorld from '../components/HelloWorld.jsx';
+import HelloWorld from '../components/HelloWorld.js';
 import actionCreateer from '../actions/HelloWorldAction.jsx';
 
 function mapStateToProps(state) {

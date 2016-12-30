@@ -4,6 +4,8 @@
 
 建议使用 [NPM淘宝镜像](http://npm.taobao.org/) 就一个字 快
 
+ES6学习 [ES6（ECMAScript2015）的出现，无疑给前端开发人员带来了新的惊喜](http://www.alloyteam.com/2016/03/es6-front-end-developers-will-have-to-know-the-top-ten-properties/)
+
 ## Installation
 
 ```sh

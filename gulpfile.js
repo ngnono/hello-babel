@@ -77,7 +77,7 @@ gulp.task('webpackClean', function () {
 });
 
 gulp.task('webpack',[ 'webpackClean'],function() {
-  return gulp.src('src/client/index.jsx')
+  return gulp.src('src/client/index.js')
     .pipe(webpack(require('./webpack.config.js')))
     .pipe(gulp.dest('dist/'));
 });

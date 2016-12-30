@@ -3,10 +3,14 @@
  */
 
 function counter(state = {count: 0}, action) {
-  const count = state.count
+
+  const {count, title} = state;
+
   switch (action.type) {
     case 'increase':
-      return {count: count + 1}
+      return {count: count + 1, title};
+    case 'decrease':
+      return {count: count - 1, title};
     default:
       return state
   }
