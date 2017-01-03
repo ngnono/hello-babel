@@ -1,9 +1,6 @@
-/**
- * Created by ngnono on 16-12-30.
- */
-
 import {connect} from 'react-redux';
-import Counter from '../components/Counter.jsx';
+
+import App from '../components/Home.jsx';
 
 
 /**
@@ -12,11 +9,9 @@ import Counter from '../components/Counter.jsx';
  * @returns {{value: number}}
  */
 function mapStateToProps(state) {
-
-  let own = state.counter || state;
-
+  let own = state.home || state;
+  
   return {
-    count: own.count,
     title: own.title
   };
 }
@@ -28,33 +23,20 @@ function mapStateToProps(state) {
  */
 function mapDispatchToProps(dispatch) {
   return {
-    /**
-     * event increase
-     */
-    onIncreaseClick: () => dispatch(counterAction.increase),
-    /**
-     * event decrease
-     */
-    onDecreaseClick: () => dispatch(counterAction.decrease)
-  }
+    default: () => dispatch(action.default)
+  };
 }
 
 /**
  * action
  * @type {{increase: {type: string}}}
  */
-const counterAction = {
+const action = {
   /**
    * +
    */
-  increase: {
-    type: 'increase'
-  },
-  /**
-   * -
-   */
-  decrease: {
-    type: 'decrease'
+  default: {
+    type: 'default'
   }
 
 };
@@ -62,6 +44,6 @@ const counterAction = {
 const app = connect(
   mapStateToProps,
   mapDispatchToProps
-)(Counter);
+)(App);
 
 export default  app;

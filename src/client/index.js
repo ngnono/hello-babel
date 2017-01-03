@@ -6,21 +6,29 @@
 
 import ReactDOM from 'react-dom'
 import React from 'react';
-import {createStore, applyMiddleware} from 'redux';
+import {createStore, applyMiddleware, combineReducers} from 'redux';
 import createLogger from 'redux-logger';
 import promiseMiddleware from 'redux-promise';
 import {Provider} from 'react-redux';
+import {Router, Route, hashHistory, browserHistory} from 'react-router';
+import {syncHistoryWithStore, routerReducer} from 'react-router-redux';
+
+
+// import Counter  from './components/Counter.jsx';
+
+import reducers from './reducers/index';
 
 const logger = createLogger();
 
-// import Counter  from './components/Counter.jsx';
-import Counter from './containers/counterContainer.js';
-import counterReducer from './reducers/counterReducer';
-
 //初始化 state
-const initial_state = {count: -1,title:'计数器'};
+const initial_state = {counter: {count: -1, title: '计数器'}, app: {title: '2'}, home: {title: '1'}};
 
-var store = createStore(counterReducer, initial_state, applyMiddleware(promiseMiddleware, logger));
+var store = createStore(combineReducers(reducers), initial_state, applyMiddleware(promiseMiddleware, logger));
+
+const history = syncHistoryWithStore(hashHistory, store);
+
+import routes from './routes';
+
 
 // function onIncreaseClick(e) {
 //   "use strict";
@@ -47,7 +55,7 @@ var store = createStore(counterReducer, initial_state, applyMiddleware(promiseMi
 
 ReactDOM.render(
   <Provider store={store}>
-    <Counter />
+    <Router routes={routes} history={history}/>
   </Provider>,
   document.getElementById('root')
 );

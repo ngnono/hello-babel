@@ -5,10 +5,16 @@ import React, {Component, PropTypes} from 'react'
 
 class Counter extends Component {
 
-  render() {
-    const {title, value, onIncreaseClick, onDecreaseClick} = this.props;
+  constructor(props) {
+    super(props);
 
-    const count = value;
+
+  }
+
+  render() {
+    const {title, count, onIncreaseClick, onDecreaseClick} = this.props;
+
+
     return (
       <div>
         <h1>{title}</h1>
@@ -21,7 +27,7 @@ class Counter extends Component {
 }
 
 Counter.propTypes = {
-  value: PropTypes.number.isRequired,
+  count: PropTypes.number.isRequired,
   onIncreaseClick: PropTypes.func.isRequired,
   onDecreaseClick: PropTypes.func.isRequired
 };
