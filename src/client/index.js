@@ -13,6 +13,8 @@ import {Provider} from 'react-redux';
 import {Router, Route, hashHistory, browserHistory} from 'react-router';
 import {syncHistoryWithStore, routerReducer} from 'react-router-redux';
 
+import './styles/main.css';
+
 
 // import Counter  from './components/Counter.jsx';
 
