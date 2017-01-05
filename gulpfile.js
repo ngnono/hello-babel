@@ -57,7 +57,7 @@ gulp.task('watch', function () {
 });
 
 gulp.task('babel', ['copyConfig'], function () {
-  return gulp.src('src/**/*.js')
+  return gulp.src(['src/**/*.js','!src/client/**'])
     .pipe(babel())
     .pipe(gulp.dest('lib'));
 });
