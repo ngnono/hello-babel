@@ -15,6 +15,9 @@ const NODE_ENV = process.env.NODE_ENV;
 
 export default  app.listen(PORT, err => {
   if (err) {
+    console.error(err.message);
+    console.error(err);
+
     throw err;
   }
 
