@@ -3,6 +3,10 @@
  */
 
 import parse from 'co-body';
+import Debug from 'debug';
+
+var debug = Debug('server:controllers:home');
+
 
 /**
  * 默认首页
@@ -18,8 +22,8 @@ export function* webhook() {
 
   const text = yield parse.text(this);
 
-  console.log(text);
-  console.log(this.headers);
+  debug(text);
+  debug(this.headers);
 
   this.body = {
     status: true,

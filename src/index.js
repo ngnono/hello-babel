@@ -1,6 +1,7 @@
 import 'babel-polyfill';
-
+/*eslint-disable*/
 import bootstarp from './server/bootstrap';
+/*eslint-enable*/
 import server from './server/server';
 import address from 'network-address';
 
@@ -17,6 +18,8 @@ export default  app.listen(PORT, err => {
     throw err;
   }
 
+  /*eslint-disable*/
   console.info('app is listening on "%s:%s" env="%s"', address(), PORT, NODE_ENV);
+  /*eslint-enable*/
 });
 

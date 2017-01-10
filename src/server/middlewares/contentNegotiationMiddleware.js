@@ -12,6 +12,7 @@ const debug = Debug('server:middlewares:contentNegotiationMiddleware');
 export default (opts)=>function *middleware(next) {
 
   debug('before');
+  debug(opts);
 
   yield  *next;
 

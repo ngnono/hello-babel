@@ -15,8 +15,8 @@ var webpack = require('gulp-webpack');
 // when they're loaded
 require('babel-register');
 
-gulp.task('static', function () {
-  return gulp.src('**/*.js')
+gulp.task('server-static', function () {
+  return gulp.src(['src/**/*.js','!src/client/**'])
     .pipe(excludeGitignore())
     .pipe(eslint())
     .pipe(eslint.format())
@@ -27,8 +27,8 @@ gulp.task('nsp', function (cb) {
   nsp({package: path.resolve('package.json')}, cb);
 });
 
-gulp.task('pre-test', function () {
-  return gulp.src('src/**/*.js')
+gulp.task('pre-server-test', function () {
+  return gulp.src(['src/**/*.js','!src/client/**'])
     .pipe(excludeGitignore())
     .pipe(istanbul({
       includeUntested: true,
@@ -37,7 +37,7 @@ gulp.task('pre-test', function () {
     .pipe(istanbul.hookRequire());
 });
 
-gulp.task('test', ['pre-test'], function (cb) {
+gulp.task('test', ['pre-server-test'], function (cb) {
   var mochaErr;
 
   gulp.src('test/**/*.js')
@@ -89,4 +89,4 @@ gulp.doneCallback = function (err) {
 };
 
 gulp.task('prepublish', ['nsp', 'babel']);
-gulp.task('default', ['static', 'test']);
+gulp.task('default', ['server-static', 'test']);

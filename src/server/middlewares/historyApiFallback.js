@@ -18,4 +18,4 @@ export default function (options) {
     });
     yield next;
   }
-};
+}
