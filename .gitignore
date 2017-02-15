@@ -18,3 +18,5 @@ lib
 
 !node_modules/@test
 !node_modules/@server
+
+exclude
