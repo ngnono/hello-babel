@@ -9,7 +9,7 @@ log[s]
 exercise
 
 *.log
-
+*.log.*
 lib
 
 **/server/config/test.yml
@@ -18,5 +18,7 @@ lib
 
 !node_modules/@test
 !node_modules/@server
+
+!src/server/lib
 
 exclude

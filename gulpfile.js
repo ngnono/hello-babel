@@ -9,13 +9,14 @@ var plumber = require('gulp-plumber');
 var babel = require('gulp-babel');
 var del = require('del');
 var isparta = require('isparta');
+var webpack = require('gulp-webpack');
 
 // Initialize the babel transpiler so ES2015 files gets compiled
 // when they're loaded
 require('babel-register');
 
-gulp.task('static', function () {
-  return gulp.src('**/*.js')
+gulp.task('server-static', function () {
+  return gulp.src(['src/**/*.js','!src/client/**'])
     .pipe(excludeGitignore())
     .pipe(eslint())
     .pipe(eslint.format())
@@ -26,8 +27,8 @@ gulp.task('nsp', function (cb) {
   nsp({package: path.resolve('package.json')}, cb);
 });
 
-gulp.task('pre-test', function () {
-  return gulp.src('src/**/*.js')
+gulp.task('pre-server-test', function () {
+  return gulp.src(['src/**/*.js','!src/client/**'])
     .pipe(excludeGitignore())
     .pipe(istanbul({
       includeUntested: true,
@@ -36,7 +37,7 @@ gulp.task('pre-test', function () {
     .pipe(istanbul.hookRequire());
 });
 
-gulp.task('test', ['pre-test'], function (cb) {
+gulp.task('test', ['pre-server-test'], function (cb) {
   var mochaErr;
 
   gulp.src('test/**/*.js')
@@ -56,7 +57,7 @@ gulp.task('watch', function () {
 });
 
 gulp.task('babel', ['copyConfig'], function () {
-  return gulp.src('src/**/*.js')
+  return gulp.src(['src/**/*.js','!src/client/**'])
     .pipe(babel())
     .pipe(gulp.dest('lib'));
 });
@@ -65,12 +66,22 @@ gulp.task('clean', function () {
   return del('lib/');
 });
 
-
 gulp.task('copyConfig', ['clean'], function () {
   return gulp.src('src/**/*.yml')
     .pipe(excludeGitignore())
     .pipe(gulp.dest('lib'));
 });
+
+gulp.task('webpackClean', function () {
+  return del('dist/');
+});
+
+gulp.task('webpack',[ 'webpackClean'],function() {
+  return gulp.src('src/client/index.js')
+    .pipe(webpack(require('./webpack.config.js')))
+    .pipe(gulp.dest('dist/'));
+});
+
 
 //https://github.com/sindresorhus/gulp-mocha/issues/1
 gulp.doneCallback = function (err) {
@@ -78,4 +89,4 @@ gulp.doneCallback = function (err) {
 };
 
 gulp.task('prepublish', ['nsp', 'babel']);
-gulp.task('default', ['static', 'test']);
+gulp.task('default', ['server-static', 'test']);

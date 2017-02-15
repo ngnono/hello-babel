@@ -4,6 +4,8 @@
 
 建议使用 [NPM淘宝镜像](http://npm.taobao.org/) 就一个字 快
 
+ES6学习 [ES6（ECMAScript2015）的出现，无疑给前端开发人员带来了新的惊喜](http://www.alloyteam.com/2016/03/es6-front-end-developers-will-have-to-know-the-top-ten-properties/)
+
 ## Installation
 
 ```sh
@@ -55,6 +57,14 @@ $ gulp prepublish
 $ DEBUG=server:* PORT=9001 NODE_ENV=staging node ./lib/index.js --harmony
 
 ````
+
+## 参考文献
+
+### 非常好的入门教程
+[实例讲解基于 React+Redux 的前端开发流程](https://segmentfault.com/a/1190000005356568)
+
+### 阮一峰的网络日志
+[React 技术栈系列教程](http://www.ruanyifeng.com/blog/2016/09/react-technology-stack.html)
 
 ## License
 
