@@ -5,8 +5,6 @@
 import fetchGet from  '../services/showService';
 
 
-
-
 function reduce(state = {phoneNum: ''}, action = {type: 'default', payload: {}}) {
   // "use strict";
 
@@ -17,9 +15,6 @@ function reduce(state = {phoneNum: ''}, action = {type: 'default', payload: {}})
 
     case "Fetch_GetById_Success":
 
-
-
-      console.log('reducer:%s', action.payload);
       return {phoneNum: action.payload.phoneNum};
     case "Fetch_GetById_Error":
       return {error: action.payload.error};

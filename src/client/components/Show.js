@@ -11,7 +11,6 @@ import React, {Component, PropTypes} from 'react'
 class Show extends Component {
 
   constructor(props) {
-    console.log(props);
     super(props)
   }
 
@@ -19,11 +18,7 @@ class Show extends Component {
 
     const {onClick} = this.props;
 
-
-    let id = this.props.params.id || '';
-
-    onClick(id);
-
+    onClick();
   }
 
   render() {

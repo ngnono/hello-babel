@@ -16,9 +16,6 @@ import fetchGet from  '../services/showService';
 function mapStateToProps(state) {
   let own = state.show || state;
 
-  console.log('container');
-  console.log(own);
-
   return {
     phoneNum: own.phoneNum
   };

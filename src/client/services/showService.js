@@ -32,7 +32,6 @@ const fetchGet = id => (dispatch, getState) => {
 
   return fetch(url).then(response => response.json())
     .then(data => {
-      console.log('test +++++++++++++++++++');
       dispatch({type: 'Fetch_GetById_Success', payload: data});
     }).catch(e => {
       dispatch({type: 'Fetch_GetById_Error', payload: e});

@@ -25,9 +25,9 @@ const logger = createLogger();
 //初始化 state
 const initial_state = {
   counter: {count: -1, title: '计数器'},
-  app: {title: '2'},
-  home: {title: '1'},
-  show: {phoneNum: '22222'}
+  app: {title: ''},
+  home: {title: ''},
+  show: {phoneNum: ''}
 };
 
 let store = createStore(combineReducers(reducers), initial_state, applyMiddleware(thunkMiddleware, logger));
