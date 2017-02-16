@@ -6,12 +6,14 @@ import {Router, Route, IndexRoute, hashHistory, browserHistory} from 'react-rout
 import Counter from './containers/counterContainer';
 import App from './containers/appContainer';
 import Home from './containers/homeContainer';
+import Show from './containers/showContainer';
 
 
 const routes =
   <Route path="/" component={App}>
     <IndexRoute component={Home}/>
     <Route path="/counter" component={Counter} u="/counter"/>;
+    <Route path="/show/:id" component={Show} u="/show"/>;
   </Route>;
 
 export default  routes;

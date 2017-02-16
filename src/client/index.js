@@ -8,7 +8,7 @@ import ReactDOM from 'react-dom'
 import React from 'react';
 import {createStore, applyMiddleware, combineReducers} from 'redux';
 import createLogger from 'redux-logger';
-import promiseMiddleware from 'redux-promise';
+import thunkMiddleware from 'redux-thunk';
 import {Provider} from 'react-redux';
 import {Router, Route, hashHistory, browserHistory} from 'react-router';
 import {syncHistoryWithStore, routerReducer} from 'react-router-redux';
@@ -23,9 +23,14 @@ import reducers from './reducers/index';
 const logger = createLogger();
 
 //初始化 state
-const initial_state = {counter: {count: -1, title: '计数器'}, app: {title: '2'}, home: {title: '1'}};
+const initial_state = {
+  counter: {count: -1, title: '计数器'},
+  app: {title: '2'},
+  home: {title: '1'},
+  show: {phoneNum: '22222'}
+};
 
-var store = createStore(combineReducers(reducers), initial_state, applyMiddleware(promiseMiddleware, logger));
+let store = createStore(combineReducers(reducers), initial_state, applyMiddleware(thunkMiddleware, logger));
 
 const history = syncHistoryWithStore(hashHistory, store);
 

@@ -7,6 +7,7 @@ import {syncHistoryWithStore, routerReducer} from 'react-router-redux';
 import app from './appReducer';
 import home from './homeReducer';
 import counter from './counterReducer';
+import show from './showReducer';
 
 
-export default {app, home, counter,routing: routerReducer};
+export default {app, home, counter, show, routing: routerReducer};

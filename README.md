@@ -58,6 +58,20 @@ $ DEBUG=server:* PORT=9001 NODE_ENV=staging node ./lib/index.js --harmony
 
 ````
 
+## client
+
+### debug
+
+```sh
+
+$ npm run devClient
+
+```
+
+在浏览器 http://localhost:8080/
+
+
+
 ## 参考文献
 
 ### 非常好的入门教程
