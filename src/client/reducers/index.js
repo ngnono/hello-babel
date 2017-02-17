@@ -8,6 +8,7 @@ import app from './appReducer';
 import home from './homeReducer';
 import counter from './counterReducer';
 import show from './showReducer';
+import notFound from './notFountReducer'
 
 
-export default {app, home, counter, show, routing: routerReducer};
+export default {app, home, counter, show, notFound, routing: routerReducer};

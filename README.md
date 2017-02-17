@@ -80,6 +80,9 @@ $ npm run devClient
 ### 阮一峰的网络日志
 [React 技术栈系列教程](http://www.ruanyifeng.com/blog/2016/09/react-technology-stack.html)
 
+### react-route 
+[关于hashHistory和browserHistory使用的区别](http://blog.csdn.net/hyy1115/article/details/53021807)
+
 ## License
 
 MIT © [ngnono](./LICENSE)

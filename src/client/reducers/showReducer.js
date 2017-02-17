@@ -2,10 +2,7 @@
  * Created by ngnono on 17-2-16.
  */
 
-import fetchGet from  '../services/showService';
-
-
-function reduce(state = {phoneNum: ''}, action = {type: 'default', payload: {}}) {
+function reducer(state = {phoneNum: ''}, action = {type: 'default', payload: {}}) {
   // "use strict";
 
 
@@ -26,4 +23,4 @@ function reduce(state = {phoneNum: ''}, action = {type: 'default', payload: {}})
 
 }
 
-export default reduce;
+export default reducer;

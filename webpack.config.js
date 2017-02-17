@@ -17,7 +17,7 @@ var devFlagPlugin = new webpack.DefinePlugin({
 var node_modules_dir = path.join(__dirname, 'node_modules');
 
 var deps = [
-   //'react/dist/react.min.js',
+  //'react/dist/react.min.js',
   // //'react-router/umd/ReactRouter.min.js',
   // 'react-dom/dist/react-dom.min.js',
   // 'redux/dist/redux.min.js',
@@ -31,7 +31,7 @@ var deps = [
 
 var config = {
   entry: {
-    app: './src/client/index.js',
+    index: './src/client/index.js',
     vendors: ['react', 'react-router', 'react-dom', 'redux', 'react-redux', 'react-router-redux', 'redux-logger', 'redux-promise']
   },
   output: {
@@ -68,7 +68,12 @@ var config = {
       }
     }),
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, 'src', 'client', 'assets', 'index.html')
+      template: path.join(__dirname, 'src', 'client', 'assets', 'index.html'),
+      minify: { //压缩HTML文件
+        removeComments: true,//移除HTML中的注释
+        collapseWhitespace: false //删除空白符与换行符
+      }
+
     }),
     new OpenBrowserPlugin({
       url: 'http://localhost:3001'

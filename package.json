@@ -69,7 +69,8 @@
     "test4": "mocha --recursive --harmony --require co-mocha",
     "start": "gulp prepublish & node ./lib/index.js --harmony",
     "debug": "nodemon ./src/debug.js",
-    "devClient": "webpack-dev-server --devtool eval --progress --colors"
+    "devClient": "webpack-dev-server --devtool eval --progress --colors",
+    "buildClient": "webpack -p"
   },
   "license": "MIT",
   "dependencies": {
